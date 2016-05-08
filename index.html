@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html >
+  <head>
+    <meta charset="UTF-8">
+    <title>RoadWarrior</title>
+    
+    
+    <link rel="stylesheet" href="css/reset.css">
+
+    <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.0/css/bootstrap-datepicker3.standalone.css'>
+<link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css'>
+
+        <link rel="stylesheet" href="css/style.css">
+
+    
+    
+    
+  </head>
+
+  <body>
+
+    <div class='easytransitions'>
+  <div class='easytransitions_transition'>
+    <div class='div easytransitions_transition__part-1 none'></div>
+    <div class='div easytransitions_transition__part-2 none'></div>
+    <div class='div easytransitions_transition__part-3 none'></div>
+    <div class='div easytransitions_transition__part-4 none'></div>
+    <div class='div easytransitions_transition__part-5 none'></div>
+    <div class='div easytransitions_transition__part-6 none'></div>
+    <div class='div easytransitions_transition__part-7 none'></div>
+    <div class='div easytransitions_transition__part-8 none'></div>
+  </div>
+  <div class='easytransitions_navigation'>
+    <div class='easytransitions_navigation__left'>
+      <i class='icon ion-arrow-left-c'></i>
+    </div>
+    <div class='easytransitions_navigation__right'>
+      <i class='icon ion-arrow-right-c'></i>
+    </div>
+  </div>
+  <section class='active_slide' data-transition='none'>
+    <img src="https://s3-us-west-2.amazonaws.com/coverr/poster/Airtaxi.jpg" class="bg" alt="" />
+    <div class='center'>
+      <h1>Road Warrior</h1>
+      <h2>Recurring Trip Planner</h2>
+    </div>
+  </section>
+  <section data-transition='split_diagonal'>
+    <div class='center'>
+      <h1><span class="fontawesome-plane"></span> Flight Search</h1>
+      <h2>Select your <b>first</b> flight dates below</h2>
+      <div id="flight-datepicker" class="input-daterange input-group">
+        <div class="form-item">
+          <label>Depart on</label><span class="fontawesome-calendar"></span>
+          <input type="text" id="start-date" name="start" placeholder="Select depart date" data-date-format="DD, MM d" class="input-sm form-control"/><span class="date-text date-depart"></span>
+        </div>
+        <div class="form-item">
+          <label>Return on</label><span class="fontawesome-calendar"></span>
+          <input type="text" id="end-date" name="end" placeholder="Select return date" data-date-format="DD, MM d" class="input-sm form-control"/><span class="date-text date-return"></span>
+        </div>  
+      </div>
+      <div id="flight-datepicker" class="input-group">
+        <div class="form-item">
+          <label>From</label>
+          <input type="text" id="origin" name="origin" placeholder="Where are you flying from?" class="input-sm form-control" value="CHI"/>
+        </div>
+        <div class="form-item">
+          <label>To</label>
+          <input type="text" id="destination" name="destination" placeholder="Enter your destination city/airport" class="input-sm form-control"/>
+        </div>  
+      </div>
+      <div id="flight-datepicker" class="input-group">
+        <div class="form-item">
+          <label>Favorite Airline</label>
+          <!-- <select >
+                <option value="na">--</option>
+                <option value="AL">Alaska</option>
+                <option value="AA">American</option>
+                <option value="DA">Delta</option>
+                <option value="FA">Frontier</option>
+                <option value="JB">Jetblue</option>
+                <option value="SWA">Southwest</option>
+                <option value="UA">United</option>        
+              </select>-->
+          <input type="text" id="carrier" name="airline" placeholder="What's your preferred airline?" class="input-sm form-control"/>
+        </div>
+        <div class="form-item">
+          <label>Rewards #</label>
+          <input type="text" name="Rewards" placeholder="Enter your Rewards #" class="input-sm form-control"/>
+        </div>  
+      </div>
+      <div class="input-group">
+        <button name="button" id="trip-search">Search!</button>
+      </div>
+    </div>
+  </section>
+  <section data-transition='split_diagonal_alt'>
+    <div class='center'>
+      <h1>Pick your preferred Trip</h1>
+      <div id="results">
+      </div>
+    </div>
+  </section>
+  <section data-transition='split_diamond'>
+    <div class='center'>
+      <h1><span class="fontawesome-building"></span> Hotel Search</h1>
+      <h2>Select your <b>first</b> hotel for your trip</h2>
+      <div id="flight-datepicker" class="input-daterange input-group">
+        <div class="form-item">
+          <label>Check in</label>
+          <span class="date-text date-depart"></span>
+        </div>
+        <div class="form-item">
+          <label>Check out</label>
+          <span class="date-text date-return"></span>
+        </div>  
+      </div>
+      <div class="input-group">
+        <div class="form-item">
+          <label>Around this location:</label>
+           <input type="text" id="hotelAddress" name="hotelAddress" placeholder="e.g. Chicago, 60610, etc." class="input-sm form-control" value="DCA"/>
+        </div>
+        <div class="form-item">
+          <label>Preferred Hotel Chain:</label>
+          <input type="text" id="hotelChain" name="hotelChain" placeholder="e.g. SPG, Marriott, etc." class="input-sm form-control"/>
+        </div>  
+      </div>
+      <div class="input-group">
+         <button name="button" id="hotel-search">Search!</button>
+      </div>
+
+    </div>
+  </section>
+  <section data-transition='split_vertical'>
+    <div class='center'>
+       <h1>Pick your preferred Hotel</h1>
+      <div id="hotel-results">
+      </div>
+    </div>
+  </section>
+  <section data-transition='split_horizontal'>
+    <div class='center'>
+      <h1>Recurrence</h1>
+      
+      <h2>How many recurring trips do you need?</h2>
+      <div class="input-group">
+        <div class="form-item">
+          <label>Repeat weekly every </label>
+           <input type="text" id="repeatableOcurrence1" name="repeatableOcurrence1" placeholder="e.g. 1, 2" class="input-sm form-control"/> week
+        </div>
+        <div class="form-item">
+          <label>for </label>
+           <input type="text" id="repeatableOcurrence2" name="repeatableOcurrence2" placeholder="e.g. 20" class="input-sm form-control"/> times
+        </div>
+      </div>
+    </div>
+  </section>
+  <section data-transition='wipe_left'>
+    <div class='center'>
+      <h1>Looks good!</h1>
+      <span>Please confirm yor bookings</span>
+    </div>
+  </section>
+  <section data-transition='wipe_right'>
+    <div class='center'>
+      <h1>Booking done!</h1>
+      <span>Expect a confirmation email soon</span>
+    </div>
+  </section>
+  <section data-transition='wipe_top'>
+    <div class='center'>
+      <h1>Spread the love</h1>
+      <span>Share with your colleagues, so they can book the same itinerary</span>
+       <div class="input-group">
+           <button name="button">E-mail</button>
+           <button name="button">JIRA</button>
+           <button name="button">Hipchat</button>
+           <button name="button">Slack</button>
+      </div>
+    </div>
+  </section>
+  <section data-transition='wipe_bottom'>
+    <div class='center'>
+      <h1>All set!!</h1>
+      <span>Now get back to work</span>
+    </div>
+  </section>
+</div>
+    <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.0/js/bootstrap-datepicker.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery-dateFormat/1.0/jquery.dateFormat.js'></script>
+
+        <script src="js/index.js"></script>
+
+    
+    
+    
+  </body>
+</html>
